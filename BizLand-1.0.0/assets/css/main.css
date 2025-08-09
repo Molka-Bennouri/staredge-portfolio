@@ -88,7 +88,9 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
+h1{
+  color: #fff;
+}
 h2,
 h3,
 h4,
