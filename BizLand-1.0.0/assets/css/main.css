@@ -66,6 +66,17 @@ body {
   font-family: var(--default-font);
 }
 
+body::selection {
+  background-color: #fb2577b6;
+  color: white;
+}
+
+body::-moz-selection {
+  background-color: #3399ff;
+  color: white;
+}
+
+
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -83,7 +94,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
+  color: #003a9d;
   font-family: var(--heading-font);
 }
 
@@ -208,7 +219,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  max-height: 70px;
   margin-right: 8px;
 }
 
@@ -471,7 +482,7 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: #0682bd1f;
   font-size: 14px;
   padding-bottom: 15px;
   position: relative;
@@ -549,8 +560,8 @@ h6 {
 }
 
 .footer .social-links a:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  color: #FB2576;
+  border-color: #FB2576;
 }
 
 .footer h4 {
@@ -838,29 +849,45 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
+  position: relative;
   width: 100%;
   min-height: 75vh;
-  position: relative;
   padding: 60px 0;
   display: flex;
   align-items: center;
-  background: url("../img/hero-bg.jpg") top left;
-  background-size: cover;
+  background: none;
+  overflow: hidden;
 }
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  object-fit: cover;
+  pointer-events: none;
+}
+
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
   position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark filter */
+  z-index: 1;
 }
 
 .hero .container {
   position: relative;
+  z-index: 2;
 }
+
+
 
 .hero h1 {
   margin: 0;
@@ -874,7 +901,7 @@ section,
 }
 
 .hero p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color:#fff;
   margin: 5px 0 30px 0;
   font-size: 20px;
   font-weight: 400;
@@ -1009,11 +1036,11 @@ section,
 .featured-services .service-item:hover h4 a,
 .featured-services .service-item:hover .icon i,
 .featured-services .service-item:hover p {
-  color: var(--contrast-color);
+  color: #1F2F98;
 }
 
 .featured-services .service-item:hover:before {
-  background: var(--accent-color);
+  background: #00acdb57;
   inset: 0;
   border-radius: 0px;
 }
@@ -1222,7 +1249,7 @@ section,
 
 .testimonials:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: #00acdb57;
   position: absolute;
   inset: 0;
   z-index: 2;
